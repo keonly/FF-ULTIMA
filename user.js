@@ -24,8 +24,8 @@ user_pref("user.theme.dark.midnight", false);
 /*titlebar and tabs*/
 user_pref("ultima.disable.alltabs.button", true);
 user_pref("ultima.disable.windowcontrols.button", false);
-user_pref("ultima.disable.verticaltab.bar", false);
-user_pref("ultima.disable.verticaltab.bar.withindicator", false);
+user_pref("ultima.disable.verticaltab.bar", true);
+user_pref("ultima.disable.verticaltab.bar.withindicator", true);
 user_pref("ultima.tabs.autohide", true);
 user_pref("ultima.tabs.belowURLbar", true);
 user_pref("ultima.tabs.width.small", false);
@@ -49,7 +49,7 @@ user_pref("ultima.theme.color.swap", false);
 /*url bar*/
 user_pref("ultima.navbar.autohide", false);
 user_pref("ultima.urlbar.suggestions", true);
-user_pref("ultima.urlbar.centered", true);
+user_pref("ultima.urlbar.centered", false);
 user_pref("ultima.urlbar.hidebuttons", false);
 user_pref("ultima.xstyle.urlbar", false);
 
