@@ -1,12 +1,14 @@
-/*---------------------------- Dark Mode Global Variables -----------------------------
-- Global variables used for ease of modification, and future customization
- 
-[Index] ctrl+f a line to find the specified section:
+/*///////////////////////////////////////////////////////////////////////////////////////\
+
+FF Ultima:         https://github.com/soulhotel/FF-ULTIMA
+File Desc:         DARK Mode Color Scheme, Catppuccin
+
 Establishing custom variables
 Overwriting existing variables
 Applying variables to create the Dark Mode theme
 Custom Icons
--------------------------------------------------------------------------------------*/
+
+\////////////////////////////////////////////////////////////////////////////////////////*/
 
 
 @media (prefers-color-scheme: dark) {
@@ -315,16 +317,15 @@ Custom Icons
     }
 }   
     
-} /* < end of Theming */
-    
-    
-    
-    
-/* Custom Icons --------------------------------------------------------------------*/
 
+    
+    
+    
+    
+/* Custom Icons -----------------------------------------------------------------*/
 
 @media (-moz-bool-pref: "ultima.theme.icons") {  
-    /*--extension menu--*/
+    /* extension menu */
     #main-window:not([lwtheme]) #unified-extensions-button {
       list-style-image: url("icons/extensions.svg") !important;
       fill: var(--toolbarbutton-icon-fill) !important;
@@ -332,17 +333,18 @@ Custom Icons
     #main-window[lwtheme] #unified-extensions-button {
       list-style-image: url("icons/extensions.svg") !important;
     }
-    /*--bookmarks folder icon--*/
+    /* bookmarks folder icon */
     .bookmark-item[container=true] {
-      list-style-image: url("icons/bm.png") !important;
+      list-style-image: url("icons/bm.svg") !important;
     }
-    /*--ublock on--*/
+    /* ublock on */
     #ublock0_raymondhill_net-BAP image{
-      list-style-image: url("icons/ubon.png") !important;
+      list-style-image: url("icons/ublock.svg") !important;
     }
-    /*--ublock off--*/
+    /* ublock off */
     #ublock0_raymondhill_net-BAP[tooltiptext="uBlock Origin (off)"] image{
-      list-style-image: url("icons/uboff.png") !important;
+      list-style-image: url("icons/ublock.svg") !important;
+      fill: rgb(231, 107, 127) !important;
     }
     #forward-button image{
       list-style-image: url("chrome://global/skin/icons/arrow-right.svg") !important;
@@ -360,6 +362,8 @@ Custom Icons
         list-style-image: url("chrome://global/skin/icons/arrow-down-12.svg") !important;
     }
 }    
-    
 
-}
+
+
+
+} /* fin */

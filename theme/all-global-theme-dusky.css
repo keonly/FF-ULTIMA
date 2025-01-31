@@ -1,12 +1,14 @@
-/*---------------------------- Dark Mode Global Variables -----------------------------
-- Global variables used for ease of modification, and future customization
- 
-[Index] ctrl+f a line to find the specified section:
+/*///////////////////////////////////////////////////////////////////////////////////////\
+
+FF Ultima:         https://github.com/soulhotel/FF-ULTIMA
+File Desc:         DARK Mode Color Scheme, Dusky
+
 Establishing custom variables
 Overwriting existing variables
-Applying variables to create the Light Mode theme
+Applying variables to create the Dark Mode theme
 Custom Icons
--------------------------------------------------------------------------------------*/
+
+\////////////////////////////////////////////////////////////////////////////////////////*/
 
 
 @media (prefers-color-scheme: light) {
@@ -15,7 +17,7 @@ Custom Icons
     
 :root, body, * {
     color-scheme: light !important;
-    --uc-ultima-window: rgb(225, 225, 255);
+    --uc-ultima-window: rgb(250, 250, 255);
     --uc-text: rgb(5, 5, 5);
     --uc-dark-color: #000;
     --uc-light-color: #fff;
@@ -24,7 +26,7 @@ Custom Icons
     --uc-accent-iii: rgb(0, 0, 0);
     --uc-accent-iv: rgba(37, 59, 111, 0.05);
     --uc-accent-v: rgb(203, 203, 204);
-    --uc-background-main: rgb(216, 217, 238);
+    --uc-background-main: rgb(244, 244, 255);
     --uc-background-layered: rgb(255, 255, 255);
     --uc-transparent: rgba(0,0,0,0);
     --uc-button-selected: rgba(115, 153, 254,0.6);
@@ -315,7 +317,7 @@ Custom Icons
 }   
 
     
-} /* < end of Theming */
+
     
 
 
@@ -333,15 +335,16 @@ Custom Icons
     }
     /* bookmarks folder icon */
     .bookmark-item[container=true] {
-      list-style-image: url("icons/bm.png") !important;
+      list-style-image: url("icons/bm.svg") !important;
     }
     /* ublock on */
     #ublock0_raymondhill_net-BAP image{
-      list-style-image: url("icons/ubon-l.png") !important;
+      list-style-image: url("icons/ublock.svg") !important;
     }
     /* ublock off */
     #ublock0_raymondhill_net-BAP[tooltiptext="uBlock Origin (off)"] image{
-      list-style-image: url("icons/uboff.png") !important;
+      list-style-image: url("icons/ublock.svg") !important;
+      fill: rgb(231, 107, 127) !important;
     }
     #forward-button image{
       list-style-image: url("chrome://global/skin/icons/arrow-right.svg") !important;

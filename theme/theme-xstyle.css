@@ -1,7 +1,7 @@
-/*----------------------------------------------------------
-this file handles Alternative Styles for different aspects of the theme
+/*///////////////////////////////////////////////////////////////////////////////////////\
 
-[Index: For ctrl+f a line to find a section]
+FF Ultima:         https://github.com/soulhotel/FF-ULTIMA
+File Desc:         Alternative styles and settings for elements within the browser
 
 URL Bar
 theme colors
@@ -10,8 +10,8 @@ tab groups
 compact tabs
 container tabs
 bookmarks fade out
-----------------------------------------------------------*/
 
+\////////////////////////////////////////////////////////////////////////////////////////*/
 
 /* alternative styling for URL Bar ------------------------------------------------------------------------------- */
 
@@ -80,7 +80,7 @@ bookmarks fade out
         #sidebar-main:has([closebuttons="activetab"]) .tab-group-label {color: transparent !important;}
     }}
     @media (-moz-bool-pref: "ultima.tabs.autohide") { @media (-moz-bool-pref: "sidebar.verticalTabs") {
-        #sidebar-main:has([expanded=""],[closebuttons="activetab"]):not(:hover) .tab-group-label-container {width:23px !important;}
+        .tab-group-label-container {width:23px !important;}
         #sidebar-main:has([expanded=""],[closebuttons="activetab"]):not(:hover) .tab-group-label {color: transparent !important;}
     }}
 
@@ -92,7 +92,7 @@ bookmarks fade out
     /* give tab-group label spacing similar to tabs + styling */
     .tab-group-label-container {
         margin-inline: 18px !important;
-        height: 39px !important;
+        height: 29px !important;
         background-color: transparent !important;
         border-radius: var(--uc-tab-border-radius) !important;
     }
@@ -100,7 +100,7 @@ bookmarks fade out
       /*height: 18px !important;*/
       cursor: pointer !important;
       border-radius: var(--uc-tab-border-radius) !important;
-      min-width: 10px !important;
+      /*min-width: 10px !important;*/
       border: 0px transparent solid !important;
     }
 
@@ -148,6 +148,11 @@ bookmarks fade out
     @media (-moz-bool-pref: "sidebar.verticalTabs") {
         .tab-group-label-container {
             width: calc(var(--uc-vertical-collapsed-width) - 4px) !important;
+        }
+        @media not (-moz-bool-pref: "ultima.tabs.autohide") {
+            .tab-group-label-container {
+                width: 100px !important;
+            }            
         }
     }
 
@@ -198,6 +203,21 @@ bookmarks fade out
     }
 
 }
+
+
+@media (-moz-bool-pref: "ultima.xstyle.tabgroups.i") {
+    #sidebar-main:hover .tab-group-label-container {min-width:200px !important;}
+}
+
+@media (-moz-bool-pref: "ultima.xstyle.tabgroups.ii"),@media (-moz-bool-pref: "ultima.xstyle.tabgroups.i") {
+    @media (-moz-bool-pref: "sidebar.verticalTabs") {
+        tab-group {
+            #tabbrowser-tabs[expanded] & {
+                margin-inline-start: 0px !important;
+            }
+        }
+    }
+}
 /* compact tabs ------------------------------------------------------------------------ */
 
 @media (-moz-bool-pref: "ultima.spacing.compact.tabs") { 
@@ -208,13 +228,9 @@ bookmarks fade out
 /* ------------------------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------------------------------------------------ */
-/*alternative styling for container tabs*/
-/* *** currently only works for horizontal tabs, be patient, firefox's vertical tabs feature is still progressing! *** */
 
-/*---------------------------------------------------
-- Containerized tab styling
-- by Kaedriz
----------------------------------------------------*/
+/*alternative styling for container tabs*/
+/* by Kaedriz */
 
 /* Needs to be added to avoid overflowing, needs testing if this doesn't break anything */
 .tabbrowser-tab .tab-background {
@@ -224,35 +240,47 @@ bookmarks fade out
 /* Style 1 */
 /* Simply changing border to the left side of tab icon */
 @media (-moz-bool-pref: "ultima.xstyle.containertabs.i") {
-.tabbrowser-tab .tab-context-line {
-  width: 3px;
-  height: 35px !important;
-  margin: 0 !important;
+    .tabbrowser-tab .tab-context-line {
+        border: 2px solid var(--identity-icon-color);
+        margin: 0 !important;
+        width: 100%;
+        height: 100% !important;
+        background: transparent !important;
+        border-radius: var(--tab-border-radius) !important;
+        opacity: 0.7;
+    } 
 }
-}
+
 /* Style 2 */
 /* Border around full tab */
 @media (-moz-bool-pref: "ultima.xstyle.containertabs.ii") {
- .tabbrowser-tab .tab-context-line {
-  border: 2px solid var(--identity-icon-color);
-  margin: 0 !important;
-  width: 100%;
-  height: 100% !important;
-  background: transparent !important;
-  border-radius: var(--tab-border-radius) !important;
-  opacity: 0.6;
-} 
+    .tabbrowser-tab .tab-context-line {
+        border: 2px solid var(--identity-icon-color);
+        margin: 0 !important;
+        width: 100%;
+        height: 100% !important;
+        background: transparent !important;
+        border-radius: var(--tab-border-radius) !important;
+        opacity: 0.0;
+    } 
+    .tabbrowser-tab .tab-background {border: 2px solid var(--identity-icon-color);}
 }
+
 /* Style 3 */
 /* Full color overlay */
 @media (-moz-bool-pref: "ultima.xstyle.containertabs.iii") {
 /* Will needs tweaks as text color could be unreadable in some combinations */
- .tabbrowser-tab .tab-context-line {
-  width: 100%;
-  height: 100% !important;
-  margin: 0 !important;
-  opacity: 0.7;
-}
+    .tabbrowser-tab .tab-context-line {
+        width: 100%;
+        height: 100% !important;
+        margin: 0 !important;
+        opacity:  0.0;
+    }
+    .tabbrowser-tab.identity-color-purple,.tabbrowser-tab.identity-color-red,.tabbrowser-tab.identity-color-blue,
+    .tabbrowser-tab.identity-color-green,.tabbrowser-tab.identity-color-black,.tabbrowser-tab.identity-color-pink,.tabbrowser-tab.identity-color-purple {
+        .tab-background {background:color-mix(in lab, var(--identity-icon-color) 90%, var(--uc-ultima-window) 40%) !important;}
+        .tab-text[selected] {color: var(--uc-ultima-window) !important;}
+    }
 } 
 
 
