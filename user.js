@@ -123,7 +123,7 @@ user_pref("general.smoothScroll.msdPhysics.enabled", true);
 
 /*privacy*/
 user_pref("browser.send_pings", false); 
-user_pref("dom.event.clipboardevents.enabled", false); /* clipboard telemetry */
+// user_pref("dom.event.clipboardevents.enabled", false); /* clipboard telemetry */
 user_pref("dom.battery.enabled", false); /* battery telemetry.. why???*/
 user_pref("extensions.pocket.enabled", false); 
 user_pref("datareporting.healthreport.uploadEnabled", false);
