@@ -8,6 +8,10 @@
 
 </div>
 
+<!--
+<div align='center'><a href='https://www.websitecounterfree.com'><img src='https://www.websitecounterfree.com/c.php?d=9&id=65926&s=1' border='0' alt='Free Website Counter'></a><br / ><small><a href='https://www.websitecounterfree.com' title="Free Website Counter">Free Website Counter</a></small></div>
+-->
+
 ![ffultima-editions](https://github.com/user-attachments/assets/061d124e-d846-4da1-8466-03e2341e0802)
 
 
@@ -88,10 +92,19 @@
 2. Or in the terminal, navigate to your Profiles chrome folder `cd your\profile-folder\chrome`.
 3. In the terminal, git clone the repo to install/update to the latest version:
 ```
-# cd your/profile-folder/chrome                            # cd into profile folder
-git clone https://github.com/soulhotel/FF-ULTIMA.git       # git clone inside
-mv FF-ULTIMA/* FF-ULTIMA/.* .                              # clean up double folder
-rmdir FF-ULTIMA                                            # remove the extra folder
+# WINDOWS
+
+# 1. Navigate to your Firefox Profile Folder
+# 2. Git clone FF-Ultima into a `chrome` folder
+
+cd C:\Users\You\AppData\Roaming\Mozilla\Firefox\Profiles\YourProfileFolder
+git clone https://github.com/soulhotel/FF-ULTIMA.git chrome
+```
+```
+# LINUX
+
+cd ~/.mozilla/firefox/YourProfileFolder
+git clone https://github.com/soulhotel/FF-ULTIMA.git chrome
 ```
 5. In your chrome folder you'll have a file named `user.js`.
 6. Move the `user.js` file <ins>OUT of the chrome folder and INTO your Profile Folder.</ins>
