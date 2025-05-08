@@ -75,7 +75,7 @@ Extra modifications woth no place to go (yet)
 #nav-bar {min-height:var(--uc-navbar-height) !important; max-height: var(--uc-navbar-height) !important; z-index:997 !important;}
 #nav-bar .toolbarbutton-1 {margin-top:2.5px !important;} /*align child buttons vertically*/
 #TabsToolbar {min-height: var(--uc-tabbar-height) !important; z-index:996 !important;}
-#tabbrowser-tabs[orient="horizontal"] {max-height: var(--uc-tabbar-height) !important;}
+#tabbrowser-tabs[orient="horizontal"]:not([movingtab=""]) {max-height: var(--uc-tabbar-height) !important;padding-top:4px;padding-left:4px !important}
 #PersonalToolbar {height: var(--uc-bookbar-height) !important; z-index:995 !important;}
 #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab {margin: 2px 0 2px 0 !important;}
 
@@ -468,8 +468,9 @@ box-shadow: none !important;}}
 #sidebar { @media -moz-pref("sidebar.revamp") { & {
     box-shadow: 1px 2px 6px 0 light-dark(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.4)) !important;
     border: 0px solid var(--sidebar-border-color) !important;
+    outline: none !important;
 }}}
-
+/* FIREFOX IM TIRED OF YOUR GOT DAM BOREDERS MANNNNNNNNN FR JUST STOP FR STOP */
 
 /* Sidebar Seperator ----------------------------------------------------------------------*/
 
@@ -647,9 +648,9 @@ span.button-background.labelled label {padding-left: 5px !important;}
 
 /* Vertical Tabs Disabled - setting ------------------------------------------------------*/
 
-@media -moz-pref("ultima.disable.verticaltab.bar") {
 @media -moz-pref("sidebar.verticalTabs") {
-
+@media -moz-pref("ultima.disable.verticaltab.bar") {
+@media not -moz-pref("ultima.disable.verticaltab.bar.notprivate") {
     /* accessibility button */
     #sidebar-main:not(:hover) {       
         position:fixed !important;
@@ -680,15 +681,60 @@ span.button-background.labelled label {padding-left: 5px !important;}
           z-index: 998;top: 0; bottom: 0;right: -5px;width: 1px;height: auto;
         }
     }
-
     :root {
         --uc-content-margins: 3px 5px 5px 5px;
         --uc-sb-margins: 2px 0px 5px 5px;
         --uc-sb-margins-right: 2px 5px 5px 0px;
     }
-    
-    
-}}
+    /* no vertical tab resizing with this setting, it interferes with the sidebar */
+    #main-window:has(#sidebar-main) #sidebar-launcher-splitter {
+        display:none !important;
+    }
+}}}
+@media -moz-pref("sidebar.verticalTabs") {
+@media not -moz-pref("ultima.disable.verticaltab.bar") {
+@media -moz-pref("ultima.disable.verticaltab.bar.notprivate") {
+    #main-window:not([privatebrowsingmode="temporary"]) {
+        /* accessibility button */
+        & #sidebar-main:not(:hover) {       
+            position:fixed !important;
+            top:85vh !important;
+            left:calc(var(--uc-vertical-collapsed-width) * -1 + 8px) !important; &[positionend]{}
+            height:5vh !important;
+            width:55px !important;
+            border-radius:7px !important;
+            transform:scale(0);
+            background-color:var(--uc-accent-ii) !important;
+            & *{display:none !important;}
+        }
+        /* style the accessibility button like so: */
+        &:not([lwtheme]) #sidebar-main:not(:hover) {
+            background:var(--uc-accent-ii) !important;
+        }
+        @media -moz-pref("ultima.disable.verticaltab.bar.withindicator") {
+            & #sidebar-main:not(:hover) {transform:scale(1);z-index:1001 !important;}  
+        }
+        /* sidebar triggered by screen edge */
+        @media not -moz-pref("ultima.spacing.compact") {
+            & #sidebar-box::before {
+              content: "";background-color:none;position: absolute;
+              z-index: 998;top: 0; bottom: 0;left: -5px;width: 1px;height: auto;
+            }
+            & #sidebar-box::after {
+              content: "";background-color:none;position: absolute;
+              z-index: 998;top: 0; bottom: 0;right: -5px;width: 1px;height: auto;
+            }
+        }
+        --uc-content-margins: 3px 5px 5px 5px;
+        --uc-sb-margins: 2px 0px 5px 5px;
+        --uc-sb-margins-right: 2px 5px 5px 0px;
+
+        /* no vertical tab resizing with this setting, it interferes with the sidebar */
+        &:has(#sidebar-main) #sidebar-launcher-splitter {
+            display:none !important;
+        }
+    }  
+}}}
 
 
 /* ---------------------------------------------------------------------------------------*/
@@ -762,9 +808,16 @@ menupopup menuseparator {opacity:0.2 !important;}
 #navigator-toolbox {scrollbar-width:auto !important; scrollbar-color:rgba(70, 70, 80, 0.2) rgba(5,5,5, 0.0) !important;}  
 
 .tabbrowser-tab[pending] .tab-content {
-  opacity: 0.2 !important;
+  opacity: 0.1 !important;
 }    
-
+.tab-icon-image[pending] {
+  filter: grayscale(60%) !important;
+}
+@media (prefers-color-scheme: light) {
+    .tabbrowser-tab[pending] .tab-content {
+      opacity: 0.2 !important;
+    }
+}
 
 /* 4/1/2025 firefox 137 */
 
@@ -799,21 +852,30 @@ menupopup menuseparator {opacity:0.2 !important;}
 :root[sidebar-expand-on-hover] {
     & #sidebar-main {
         &:not([sidebar-positionend]) {
-            margin-right: -3px;
+            margin-right: -4px;
         }
         &[sidebar-positionend] {
-            margin-right:3px;
+            margin-right:4px;
             margin-left: -0px !important; 
         }
     }
 }
 
-/* 4/18/2025 */
-/*
-#reload-button {
-    cursor: wait !important;
+/* 5/2/2025 */
+
+#sidebar-main {
+    &:not([sidebar-positionend]) {
+        margin-right: -4px;
+    }
+    &[sidebar-positionend] {
+        margin-right:4px;
+        margin-left: -0px !important; 
+    }
 }
-*/
+
+#import-button {
+  display: none !important;
+}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
     
