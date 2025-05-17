@@ -165,6 +165,7 @@ Extra modifications woth no place to go (yet)
 /* mac */
 @media (-moz-os-version: macos), (-moz-platform: macos) {
     toolbar {min-height: 0px !important;}
+    .titlebar-buttonbox {margin-right: 19px !important;} /*match title bar button margin from right side of browser */
 }
 /* windows */
 @media (-moz-platform: windows) {
@@ -556,14 +557,14 @@ just need to find the right combination of sidebar-launcher events
   & #tabbrowser-tabbox {
     &:not([sidebar-positionend]) {
       &[sidebar-launcher-expanded][sidebar-launcher-hovered]:not([sidebar-panel-open]), &[sidebar-ongoing-animations]:not([sidebar-launcher-expanded], [sidebar-panel-open]) {
-        margin-inline-start: 50.3666687px !important;
+        margin-inline-start: 49.3666687px !important;
       }
     }
   }
 }
 :root:has([sidebar-launcher-expanded][sidebar-panel-open])) {
   & #sidebar-box:not([sidebar-positionend]) {
-        margin-inline-start: 50.3666687px !important;
+        margin-inline-start: 49.3666687px !important;
   }
 }
 

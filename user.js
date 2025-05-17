@@ -22,15 +22,17 @@ user_pref("user.theme.dark.gruvbox", false);
 user_pref("user.theme.light.gruvbox", false);
 user_pref("user.theme.dark.midnight", false);
 user_pref("user.theme.dark.midnight.animated", false);
+user_pref("user.theme.dark.scarlet", false);  /*wip design stage*/
 
 /* nav bar */
 user_pref("ultima.navbar.autohide", false);
 user_pref("ultima.navbar.windowcontrols.carl", false);
 user_pref("ultima.navbar.windowcontrols.trafficlights", false);
 user_pref("ultima.navbar.windowcontrols.whiteout", false);
+user_pref("ultima.navbar.windowcontrols.fluent", false);
 user_pref("ultima.disable.windowcontrols.button", false);
 user_pref("ultima.xstyle.bookmarks.centered", true);
-user_pref("ultima.xstyle.bookmarks.autohide", true);
+user_pref("ultima.xstyle.bookmarks.autohide", false);
 user_pref("ultima.xstyle.bookmarks.fading", false);
 
 /* sidebar */
@@ -62,6 +64,8 @@ user_pref("ultima.xstyle.urlbar", false);
 
 /* alternate styles */
 user_pref("ultima.spacing.compact", false);
+user_pref("ultima.spacing.compact.contextmenu", false);
+user_pref("ultima.spacing.relaxed.contextmenu", false);
 user_pref("ultima.xstyle.tabgroups.i", true);
 user_pref("ultima.xstyle.tabgroups.ii", false);
 user_pref("ultima.xstyle.tabgroups.with.colormix", false);
