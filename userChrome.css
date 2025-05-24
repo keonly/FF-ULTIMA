@@ -16,7 +16,7 @@ License:           MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICE
 
 @import url(theme/function-sidebar-autohide.css);
 @import url(theme/function-privatemode.css); /* sourced from MOG */
-@import url(theme/function-urlbar.css);
+@import url(theme/theme-urlbar.css);
 @import url(theme/function-extensions-menu.css);
 
 @import url(theme/theme-xstyle.css);
@@ -27,19 +27,3 @@ License:           MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICE
 @import url(theme/theme-tab-audio-indicator.css);
 @import url(theme/theme-windowcontrols.css); 
 @import url(theme/all-global-configurations.css);
-
-
-/*tab group padding resizes when expand on hover*/
-.tab-group-label {
-
-    #tabbrowser-tabs[orient="vertical"][expanded] & {
-        padding-block: 2px !important;
-    }
-    #tabbrowser-tabs[orient="vertical"]:not([expanded]) & {
-        &::first-letter {
-            line-height: var(--tab-label-line-height) !important;
-            padding-block: 2px !important;
-        }
-    }
-  
-}

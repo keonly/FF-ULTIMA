@@ -23,16 +23,20 @@ display: none !important;}
     display: none !important;
 }
 
+#context_unloadTab {
+  display: initial !important;
+}
+
 /* context menu theming */
 
 @media -moz-pref("ultima.spacing.compact.contextmenu") {
-    menuitem {
-        --menuitem-padding: .15em .3em;
+    menupopup, menuitem {
+        --menuitem-padding: .15em .3em !important;
     }
 }
 @media -moz-pref("ultima.spacing.relaxed.contextmenu") {
-    menuitem {
-        --menuitem-padding: .50em .5em;
+    menupopup, menuitem {
+        --menuitem-padding: .55em .7em !important;
     }
 }
 

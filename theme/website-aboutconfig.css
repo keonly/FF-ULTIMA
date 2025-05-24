@@ -13,7 +13,7 @@ warning messages
     /* apply dark mode colors */
     @media (prefers-color-scheme: dark) {
         @media -moz-pref("user.theme.dark.a") {
-            --ut-background: rgb(43, 42, 51);
+            --ut-background: rgb(40, 39, 48);
             --uc-accent-i: rgb(121, 161, 195);
             --in-content-page-background: var(--ut-background) !important;
             --in-content-box-border-color: var(--uc-accent-i) !important;
@@ -118,10 +118,10 @@ body::after {
     background: var(--background-color-box);
     box-shadow: 0px 8px 15px 10px rgba(35, 25, 15, 1);
 }
-@media -moz-pref("ultima.disable.verticaltab.bar") {
-    @media -moz-pref("ultima.disable.verticaltab.bar.notprivate") {
+@media -moz-pref("ultima.tabs.vertical.hide.in.screencorner") {
+    @media -moz-pref("ultima.tabs.vertical.hide.in.screenedge") {
         body::after {
-            content: "\ Only use one of these settings! \A \A  ultima.disable.verticaltab.bar \A ultima.disable.verticaltab.bar.notprivate \A ";
+            content: "\ Only use one of these settings! \A \A  hide.in.screencorner \A hide.in.screenedge \A ";
             display: block;
         }
     }
@@ -156,6 +156,21 @@ body::after {
             display: block;
         }
 }}
-
+@media -moz-pref("ultima.xstyle.tabgroups.with.colormix.ii") {
+    @media -moz-pref("ultima.xstyle.tabgroups.with.colormix") {
+        body::after {
+            content: "\ Only use one tab group color mix! \A \A  they don't blend well together! \A ";
+            display: block;
+        }
+    }
+}
+@media -moz-pref("ultima.spacing.relaxed") {
+    @media -moz-pref("ultima.spacing.compact") {
+        body::after {
+            content: "\ Only use one of these settings! \A \A  ultima.spacing.compact \A ultima.spacing.relaxed (NOTE: relaxed spacing is WIP design) \A ";
+            display: block;
+        }
+    }
+}
 
 }} /* end aboutconfig page */
