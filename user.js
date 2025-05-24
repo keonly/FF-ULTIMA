@@ -51,7 +51,7 @@ user_pref("ultima.tabs.belowURLbar", true);
 user_pref("ultima.disable.alltabs.button", true);
 user_pref("ultima.disable.verticaltab.bar", false);
 user_pref("ultima.disable.verticaltab.bar.notprivate", false);
-user_pref("ultima.disable.verticaltab.bar.withindicator", true);
+user_pref("ultima.disable.verticaltab.bar.withindicator", false);
 user_pref("browser.tabs.tabMinWidth", 0); /*caution*/
 user_pref("sidebar.animation.expand-on-hover.duration-ms", 120);
 user_pref("sidebar.expandOnHover", true);
