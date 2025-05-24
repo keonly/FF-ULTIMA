@@ -50,7 +50,7 @@ user_pref("ultima.sidebar.seperator", false);
 user_pref("ultima.xstyle.sidebar.theming", true);
 
 /* sidebery */
-user_pref("user.theme.sidebery", true);
+user_pref("user.theme.sidebery", false);
 user_pref("ultima.sidebery.autohide", true);
 user_pref("ultima.sidebery.expandon.inactive.windows", false);
 
