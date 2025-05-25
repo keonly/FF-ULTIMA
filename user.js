@@ -40,7 +40,7 @@ user_pref("ultima.disable.windowcontrols.button", false);
 /* url bar */
 user_pref("ultima.urlbar.animate.open", true);
 user_pref("ultima.urlbar.suggestions", true);
-user_pref("ultima.urlbar.centered", true);
+user_pref("ultima.urlbar.centered", false);
 user_pref("ultima.urlbar.hidebuttons", false);
 user_pref("ultima.urlbar.transparent", false);
 
@@ -61,7 +61,7 @@ user_pref("ultima.tabs.belowURLbar", true);
 user_pref("ultima.tabs.newtabbutton.ontop.1", false);
 user_pref("ultima.tabs.newtabbutton.ontop.2", false);
 user_pref("ultima.tabs.pinnedtabs.style.1", false);
-user_pref("ultima.tabs.vertical.hide", false);
+user_pref("ultima.tabs.vertical.hide", true);
 user_pref("ultima.tabs.vertical.hide.in.screencorner", false);
 user_pref("ultima.tabs.vertical.hide.in.screenedge", true);
 user_pref("sidebar.expandOnHover", true);
