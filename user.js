@@ -57,6 +57,7 @@ user_pref("ultima.sidebery.expandon.inactive.windows", false);
 /* tabs related settings */
 user_pref("ultima.spacing.compact.tabs", true);
 user_pref("ultima.disable.alltabs.button", true);
+user_pref("ultima.tabs.disable.update.dot", true);
 user_pref("ultima.tabs.belowURLbar", true);
 user_pref("ultima.tabs.newtabbutton.ontop.1", false);
 user_pref("ultima.tabs.newtabbutton.ontop.2", false);
@@ -64,13 +65,23 @@ user_pref("ultima.tabs.pinnedtabs.style.1", false);
 user_pref("ultima.tabs.vertical.hide", true);
 user_pref("ultima.tabs.vertical.hide.in.screencorner", false);
 user_pref("ultima.tabs.vertical.hide.in.screenedge", true);
-user_pref("sidebar.expandOnHover", true);
+user_pref("ultima.tabs.vertical.hide.the.bottom.buttons", false);
+user_pref("ultima.tabs.vertical.hide.the.bottom.buttons.off.hover", true);
 user_pref("ultima.tabs.tabgroups.label.1", false);
 user_pref("ultima.tabs.tabgroups.label.2", true);
-user_pref("ultima.tabs.tabgroups.background.1", true);
-user_pref("ultima.tabs.tabgroups.background.2", false);
-user_pref("browser.tabs.tabMinWidth", 0); /*caution*/
-user_pref("sidebar.animation.expand-on-hover.duration-ms", 120);
+user_pref("ultima.tabs.tabgroups.label.tthornton", false);
+user_pref("ultima.tabs.tabgroups.background.1", false);
+user_pref("ultima.tabs.tabgroups.background.2", true);
+user_pref("ultima.tabs.tabgroups.background.3", false);
+
+/* vertical tabs defaults */
+user_pref("sidebar.verticalTabs", true);
+user_pref("sidebar.expandOnHover", true);
+user_pref("sidebar.expandOnHoverMessage.dismissed", true);
+user_pref("sidebar.visibility", "expand-on-hover");
+user_pref("sidebar.revamp.round-content-area", false); /*handled by theme*/
+user_pref("sidebar.animation.expand-on-hover.duration-ms", 140);
+user_pref("browser.tabs.tabMinWidth", 0); /*dont touch*/
 
 /* alternate styles */
 user_pref("ultima.spacing.compact", false);
@@ -123,8 +134,6 @@ user_pref("layout.css.has-selector.enabled", true);
 user_pref("widget.gtk.ignore-bogus-leave-notify", 1);
 user_pref("widget.gtk.rounded-bottom-corners.enabled", true);
 user_pref("widget.gtk.native-context-menus", false);
-user_pref("sidebar.revamp", true);
-user_pref("sidebar.verticalTabs", true);
 
 /* extra recommended */
 user_pref("toolkit.tabbox.switchByScrolling", false);

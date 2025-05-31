@@ -29,9 +29,9 @@
 >
 - Multiple Options for tabs, autohiding, spacing, theming, accessibility [and more](https://github.com/soulhotel/FF-ULTIMA/wiki/Settings).
 >
-- See more detail on [what FF Ultima has to offer](https://github.com/soulhotel/FF-ULTIMA/wiki#what-does-ff-ultima-offer) through the Wiki.
->
 - Autoconfig integration, Sidebery integration, Auto Tab Color integration
+>
+- See more detail on [what FF Ultima has to offer](https://github.com/soulhotel/FF-ULTIMA/wiki#what-does-ff-ultima-offer) through the Wiki.
 >
 
 ## Installation
@@ -134,8 +134,16 @@ git clone https://github.com/soulhotel/FF-ULTIMA.git chrome
 
 ## Documentation
 
+>[!WARNING]
+> **PLEASE,** If you have any issue related to the theme..
+>
+> Do not treat The [FirefoxCSS subreddit](https://www.reddit.com/r/FirefoxCSS/) as theme support.
+>
+> You will get the best help here, by [submitting an "Issue"](https://github.com/soulhotel/FF-ULTIMA/issues?q=is%3Aissue).
+
 [Wiki](https://github.com/soulhotel/FF-ULTIMA/wiki)
 - FAQ
+- Why User.js?
 - All theme settings
 - How to create color schemes
 - How to install, uninstall, update

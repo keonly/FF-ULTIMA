@@ -118,7 +118,7 @@ Extra modifications woth no place to go (yet)
 @media -moz-pref("sidebar.verticalTabs") {
     /*  vt on left & sidebar closed */
     :root:has(#sidebar-main:not([sidebar-positionend=""])):has(#sidebar-box:not([checked="true"])) {
-        --uc-content-margins: 2px 5px 5px -2px;
+        --uc-content-margins: 2px 5px 5px -5px;
     }
     /*  vt on left & sidebar open */
     :root:has(#sidebar-main:not([sidebar-positionend=""])):has(#sidebar-box[checked="true"]) {
@@ -126,7 +126,7 @@ Extra modifications woth no place to go (yet)
     }
     /* vt on right & sidebar closed */
     :root:has(#sidebar-main[sidebar-positionend=""]):has(#sidebar-box:not([checked="true"])) {
-        --uc-content-margins: 2px -2px 5px 5px;
+        --uc-content-margins: 2px -5px 5px 5px;
     }
     /* vt on right & sidebar open */
     :root:has(#sidebar-main[sidebar-positionend=""]):has(#sidebar-box[checked="true"]) {
@@ -677,7 +677,8 @@ span.button-background.labelled label {padding-left: 5px !important;}
 /* pinned tabs container */
 #vertical-pinned-tabs-container {padding-bottom: 0px !important;}
 #vertical-pinned-tabs-container-separator {opacity:0 !important; display: none !important;}
-#vertical-pinned-tabs-container tab:last-of-type {padding-bottom: 15px !important;}
+#main-window:not([sidebar-expand-on-hover]) #vertical-pinned-tabs-container tab {padding-bottom: 8px !important;}
+#main-window[sidebar-expand-on-hover] #vertical-pinned-tabs-container tab:last-of-type {padding-bottom: 16px !important;}
 
 /* vt when not expanded */
 #sidebar-main:not(:has(#tabbrowser-tabs[expanded])) {
@@ -732,22 +733,24 @@ span.button-background.labelled label {padding-left: 5px !important;}
 
 @media -moz-pref("sidebar.verticalTabs") {
 @media -moz-pref("ultima.tabs.vertical.hide") {
-
+       
     :root[privatebrowsingmode="temporary"] {
         & :has(#sidebar-box[checked="true"]:not([sidebar-positionend])) {
-            & #browser { padding-left: 0px !important; }
-            & #sidebar-box[checked="true"]:not([sidebar-positionend]) { left:53px !important; }
+              & #browser { padding-left: 0px !important; }
+              & #sidebar-box[checked="true"]:not([sidebar-positionend]) { left:53px !important; }
         }
         & :has(#sidebar-box[checked="true"][sidebar-positionend]) {
             & #browser { padding-right: 0px !important; }
             & #sidebar-box[checked="true"][sidebar-positionend] { right:53px !important; }
-    }   
-      
+        }
+    }    
+    
     :root[sidebar-expand-on-hover]:not([privatebrowsingmode="temporary"]) {
 
         & #sidebar-main {
             position: absolute !important; z-index:-1 !important;
-            @media (-moz-os-version: macos), (-moz-platform: macos) { z-index:1 !important; left:-45px !important;}
+            z-index:1 !important; opacity: 0 !important;
+            
         }
         & :has(#sidebar-box[checked="true"]:not([sidebar-positionend])) {
             & #browser {
@@ -778,6 +781,7 @@ span.button-background.labelled label {padding-left: 5px !important;}
                 z-index:1000 !important;
                 box-shadow: var(--uc-box-shadow) !important;
                 border-radius:10px !important;
+                opacity: 1 !important;
             }
             & :has(#tabContextMenu:not(:hover)):has(#tab-group-editor:not(:hover)) {
                 & #sidebar-main:not([sidebar-positionend=""]):not(:hover) {
@@ -802,6 +806,7 @@ span.button-background.labelled label {padding-left: 5px !important;}
                 z-index:1000 !important;
                 box-shadow: var(--uc-box-shadow) !important;
                 border-radius:10px !important;
+                opacity: 1 !important;
             }
             & :has(#tabContextMenu:not(:hover)):has(#tab-group-editor:not(:hover)) {
                 & #sidebar-main:not([sidebar-positionend=""]):not(:hover) {
@@ -908,15 +913,17 @@ menupopup menuseparator {opacity:0.2 !important;}
 
 #navigator-toolbox {scrollbar-width:auto !important; scrollbar-color:rgba(70, 70, 80, 0.2) rgba(5,5,5, 0.0) !important;}
 
-.tabbrowser-tab[pending] .tab-content {
-  opacity: 0.1 !important;
-}
-.tab-icon-image[pending] {
-  filter: grayscale(60%) !important;
-}
-@media (prefers-color-scheme: light) {
+@media -moz-pref("browser.tabs.fadeOutUnloadedTabs") {
     .tabbrowser-tab[pending] .tab-content {
-      opacity: 0.2 !important;
+        opacity: 0.1 !important;
+    }
+    .tab-icon-image[pending] {
+        filter: grayscale(60%) !important;
+    }
+    @media (prefers-color-scheme: light) {
+        .tabbrowser-tab[pending] .tab-content {
+            opacity: 0.2 !important;
+        }
     }
 }
 
@@ -975,7 +982,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
     box-shadow: var(--uc-box-shadow) !important;
 }
 
+/* 5/29/2025 141 */
 
+/* hide sidebar header for sidebery */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-panel-header {
+  display: none !important;
+}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 

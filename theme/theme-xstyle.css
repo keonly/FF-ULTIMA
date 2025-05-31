@@ -5,6 +5,7 @@ File Desc:         ALTERNATIVE STYLES for seperate sections of the browser
 
 compact tabs
 pinned tabs
+vertical tab action buttons
 nav bar
 bookmarks centered
 bookmarks fade out
@@ -37,10 +38,26 @@ tab groups
     #vertical-pinned-tabs-container {
         height: fit-content !important;
         min-height: fit-content !important;
-        max-height: 200px !important;
+        max-height: fit-content !important;
     }
-    #vertical-pinned-tabs-splitter:not(:hover) {
-        opacity:0.05 !important;
+    #vertical-pinned-tabs-splitter {
+        display:none !important;
+    }
+}
+
+/* vertical tab action buttons ---------------------------------------------------------------------------------- */
+@media -moz-pref("ultima.tabs.vertical.hide.the.bottom.buttons") {
+    .tools-and-extensions.actions-list {
+        & moz-button:not([view="viewCustomizeSidebar"]) {display:none !important;}
+    }
+    .tools-and-extensions.actions-list[orientation="horizontal"] {
+        max-width: 53px !important;
+        & moz-button[view="viewCustomizeSidebar"] {}
+    }
+}
+@media -moz-pref("ultima.tabs.vertical.hide.the.bottom.buttons.off.hover") {
+    .tools-and-extensions.actions-list[orientation="vertical"] {
+        & moz-button:not([view="viewCustomizeSidebar"]) {display:none !important;}
     }
 }
 
@@ -113,7 +130,8 @@ tab groups
     #vertical-tabs-newtab-button {
         order: -1 !important;
     }
-    #tabbrowser-tabs[hasadjacentnewtabbutton]:not([overflow]) ~ #new-tab-button, #tabbrowser-tabs[orient="horizontal"] > #vertical-tabs-newtab-button, #tabbrowser-tabs[orient="vertical"]:not([overflow]) > #vertical-tabs-newtab-button, #tabbrowser-arrowscrollbox[overflowing] > #tabbrowser-arrowscrollbox-periphery > #tabs-newtab-button, #tabbrowser-tabs:not([hasadjacentnewtabbutton])[orient="horizontal"] > #tabbrowser-arrowscrollbox > #tabbrowser-arrowscrollbox-periphery > #tabs-newtab-button, #TabsToolbar[customizing] #tabs-newtab-button {
+    #tabbrowser-tabs[orient="horizontal"] > #vertical-tabs-newtab-button,
+    #tabbrowser-tabs[orient="vertical"]:not([overflow]) > #vertical-tabs-newtab-button {
         display: flex !important;
         margin-top:10px !important;
     }
@@ -127,7 +145,17 @@ tab groups
     /*not necessary but #tabbrowser-arrowscrollbox-periphery is the container for this button*/
     #vertical-tabs-newtab-button { order: -1 !important; } 
     /*second button visible in vertical tabs expanded state*/
-    #vertical-tabs-newtab-button { order: -1 !important; }    
+    #vertical-tabs-newtab-button { order: -1 !important; }
+    /*vertical-pinned-tabs-container*/
+    #vertical-pinned-tabs-container { order: -2 !important; }
+}
+
+/* disable tab update dot ---------------------------------------------------------------------------------- */
+
+@media -moz-pref("ultima.tabs.disable.update.dot") {
+    .tab-content[titlechanged]:not([selected]) {
+        background-image:none !important;
+    }
 }
 
 /* sidebar extra theming (not sidebery) -------------------------------------------------------------------- */
@@ -250,7 +278,7 @@ tab groups
 /*----------------------------------------------------------------
 Spacing correction for all tab group styles
 ----------------------------------------------------------------*/
-@media not -moz-pref("ultima.tabs..label.1"), @media not -moz-pref("ultima.tabs..label.2") {
+@media not -moz-pref("ultima.tabs.tabgroups.label.1"), @media not -moz-pref("ultima.tabs.tabgroups.label.2") {
     tab-group {
         #tabbrowser-tabs & {
             &:not([collapsed])::before {
@@ -287,6 +315,7 @@ Spacing correction for all tab group styles
 }
 /* rounded border */
 /*vert*/
+/*
 #main-window:has(#tabbrowser-tabs[orient="vertical"]) {
     tab-group .tabbrowser-tab:first-of-type {
         border-radius: 8px 8px 0px 0px !important;
@@ -294,7 +323,7 @@ Spacing correction for all tab group styles
     tab-group .tabbrowser-tab:last-of-type {
         border-radius: 0px 0px 8px 8px !important;
     }
-}
+}*/
 /*hori*/
 #main-window:has(#tabbrowser-tabs[orient="horizontal"]) {
     tab-group .tabbrowser-tab:first-of-type {
@@ -335,105 +364,73 @@ Spacing correction for all tab group styles
   
 }
 
+tab-group { &[collapsed] > .tabbrowser-tab {visibility:collapse !important;}}
+.tab-group-label {cursor: pointer !important;}
+
 /*----------------------------------------------------------------
-Style 1: Text labels always visible
+Style T: Text labels always visible
 Contributed by @tthornton3-chwy https://github.com/tthornton3-chwy
 ----------------------------------------------------------------*/
  
-@media -moz-pref("ultima.tabs.tabgroups.label.1") {
+@media -moz-pref("ultima.tabs.tabgroups.label.tthornton") {
     /*defaults*/
     .tab-group-label {
         min-width:20px !important;
         max-width:150px !important;
-        cursor: pointer !important;
-        border-radius:1px !important;
+        border-radius:2px !important;
+        margin-left:15px !important;
     }
-    /*when using tab autohide*/
-    @media -moz-pref("ultima.tabs.autohide") { @media -moz-pref("sidebar.verticalTabs") {
-        #tabbrowser-tabs:not([expanded])
-            .tab-group-label {
-                min-width:50px !important;
-                max-width:50px !important;
-                border-radius:1px !important;
-                margin-left:0px !important;
-                /*! color: red !important; */
-        }       
-        #tabbrowser-tabs[expanded]
-            .tab-group-label {
-                min-width:42px !important;
-                max-width:150px !important;
-                border-radius:1px !important;
-        }
-        #tabbrowser-tabs[expanded]:not(:hover)
-            .tab-group-label {
-                min-width:42px !important;
-                max-width:42px !important;
-                border-radius:1px !important;
-        }
-        @media -moz-pref("ultima.enable.nightly.config") {
-        #tabbrowser-tabs[expanded]:not(:hover)
-            .tab-group-label {
-                min-width:47px !important;
-                max-width:47px !important;
-                border-radius:1px !important;
-                margin-left:3px !important;
-        }
-        }
-    }}    
-    /*spacing correction*/
-    tab-group {
-        #tabbrowser-tabs[expanded] & {
-            margin-inline-start: 0 !important;
-        }
-    }
-    /* toggle collapse visibility */
-      tab-group { &[collapsed] > .tabbrowser-tab {visibility:collapse !important;}}
 }
  
 /*----------------------------------------------------------------
- Style 2: Tab Group shrinks into a tab like Icon 
+ Style 1: Tab Group shrinks into a tab like Icon 
 ----------------------------------------------------------------*/
  
-@media -moz-pref("ultima.tabs.tabgroups.label.2") { 
-    /*defaults*/
+@media -moz-pref("ultima.tabs.tabgroups.label.1") { 
     .tab-group-label {
         min-width:20px !important;
         max-width:150px !important;
-        cursor: pointer !important;
         border-radius:17px !important;
+        margin-left:15px !important;
     }
-    /*when using tab autohide*/
-    @media -moz-pref("ultima.tabs.autohide") { @media -moz-pref("sidebar.verticalTabs") {
-        #tabbrowser-tabs:not([expanded])
-            .tab-group-label {
-                min-width:25px !important;
-                max-width:25px !important;
-                border-radius:17px !important;
-                margin-left:15px !important;
-        }
-        #tabbrowser-tabs[expanded]
-            .tab-group-label {
-                min-width:20px !important;
-                max-width:150px !important;
-                border-radius:17px !important;
-                margin-left:15px !important;
-        }        
-        #tabbrowser-tabs[expanded]:not(:hover)
-            .tab-group-label {
-                min-width:20px !important;
-                max-width:20px !important;
-                border-radius:100% !important;
-                color: transparent !important;
-        }
-    }}    
-    /*spacing correction*/
-    tab-group {
-        #tabbrowser-tabs[expanded] & {
-            margin-inline-start: 0 !important;
+    .tab-group-label[aria-description="Unnamed Group — Tab Group"] {
+        max-width:25px !important; width:25px !important; min-width: 25px !important;
+        padding-inline: 0 !important;
+    }
+}
+
+/*----------------------------------------------------------------
+ Style 2: Tab Group Line Indicator
+----------------------------------------------------------------*/
+
+@media -moz-pref("ultima.tabs.tabgroups.label.2") { 
+    /*defaults*/
+    .tab-group-label-container, .tab-group-label {
+        max-height:10px !important; height:10px !important; min-height:10px !important;
+        min-width:18px !important; max-width:150px !important;
+    }
+    .tab-group-label {
+        border-radius:17px !important;
+        line-height:0.8 !important;
+        z-index:5 !important;
+    }
+    #sidebar-main:not([sidebar-launcher-expanded]) .tab-group-label {
+        color: transparent !important;
+    }
+    .tab-group-label[aria-expanded="true"] {
+        margin-top: 7px !important;
+    }
+    .tab-group-line {
+        opacity:0 !important;
+    }
+    .tab-group-label:hover {
+        transform:scale(1.05);
+    }
+    .tab-group-label {
+        #tabbrowser-tabs[orient="vertical"][expanded] & {
+            padding: 0px 12px !important;
         }
     }
-    /* toggle collapse visibility */
-      tab-group { &[collapsed] > .tabbrowser-tab {visibility:collapse !important;}}
 }
     
 /*----------------------------------------------------------------
@@ -441,6 +438,7 @@ Tab groups with Color mixed backgrounds
 ----------------------------------------------------------------*/
  
 @media -moz-pref("ultima.tabs.tabgroups.background.1") {
+     
    /* remove accent group color border */ 
     @media -moz-pref("sidebar.verticalTabs") {
         tab-group {
@@ -500,5 +498,15 @@ Tab groups with Color mixed backgrounds
     }
 }     
 
-
-
+@media -moz-pref("ultima.tabs.tabgroups.background.3") {
+    .tab-group-line {
+        opacity:1 !important;
+    }
+    .tab-group-line {
+      #tabbrowser-tabs[orient="vertical"] & {
+        #tabbrowser-tabs[expanded] & {
+          inset-inline-start: 2px !important;
+        }
+      }
+    }
+}
