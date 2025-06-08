@@ -97,7 +97,7 @@ user_pref("ultima.xstyle.private", false); /*private browser home page*/
 
 /* xtra theming */
 
-user_pref("ultima.theme.icons", true);
+user_pref("ultima.theme.icons", false);
 user_pref("ultima.theme.menubar", true);
 user_pref("ultima.theme.color.swap", false);
 
