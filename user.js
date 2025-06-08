@@ -91,9 +91,9 @@ user_pref("ultima.spacing.compact", false);
 user_pref("ultima.spacing.relaxed", false); /*wip*/
 user_pref("ultima.spacing.compact.contextmenu", false);
 user_pref("ultima.spacing.relaxed.contextmenu", false);
-user_pref("ultima.xstyle.containertabs.i", false);
-user_pref("ultima.xstyle.containertabs.ii", false);
-user_pref("ultima.xstyle.containertabs.iii", true);
+user_pref("ultima.tabs.tabContainer.1", false);
+user_pref("ultima.tabs.tabContainer.2", false);
+user_pref("ultima.tabs.tabContainer.3", true);
 user_pref("ultima.xstyle.newtab.rounded", false); /*new tab page*/
 user_pref("ultima.xstyle.private", false); /*private browser home page*/
 
@@ -126,7 +126,7 @@ user_pref("ultima.enable.nightly.config", false);
 user_pref("ultima.enable.js.config", false);
 
 /* extra required */
-user_pref("extensions.activeThemeID", "default-theme@mozilla.org");
+user_pref("extensions.activeThemeID", "default-theme@mozilla.org");Add commentMore actions
 user_pref("browser.theme.content-theme", 0);
 user_pref("browser.theme.toolbar-theme", 0);
 user_pref("ultima.xstyle.highlight.aboutconfig", true);
