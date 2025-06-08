@@ -26,7 +26,7 @@ user_pref("user.theme.dark.scarlet", false);  /*wip design stage*/
 
 /* nav bar */
 user_pref("ultima.navbar.autohide", false);
-user_pref("ultima.navbar.hidebuttons", true);
+user_pref("ultima.navbar.hidebuttons", false);
 user_pref("ultima.navbar.bookmarks.centered", true);
 user_pref("ultima.navbar.bookmarks.autohide", false);
 user_pref("ultima.navbar.bookmarks.fading", false);
