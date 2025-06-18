@@ -35,7 +35,7 @@ user_pref("ultima.navbar.windowcontrols.trafficlights", false);
 user_pref("ultima.navbar.windowcontrols.whiteout", false);
 user_pref("ultima.navbar.windowcontrols.fluent", false);
 user_pref("ultima.navbar.theme.extensionspanel", true);
-user_pref("ultima.disable.windowcontrols.button", false);
+user_pref("ultima.disable.windowcontrols.button", true);
 
 /* url bar */
 user_pref("ultima.urlbar.animate.open", true);
