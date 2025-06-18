@@ -7,8 +7,10 @@ nav bar
 bookmarks centered
 bookmarks fade out
 bookmarks autohide
+bookmarks detachable/float
 sidebar extra theming (not sidebery)
 sidebery expand on inactive windows
+sidebar hide new header
 
 \////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -28,7 +30,8 @@ sidebery expand on inactive windows
     :root:has(#appMenu-popup[panelopen="true"]) #PanelUI-menu-button,
     :root:has(#unified-extensions-panel[panelopen="true"]) #unified-extensions-button,
     :root:has(#downloadsPanel[panelopen="true"]) #downloads-button,
-    #nav-bar:not(:focus-within):not(:hover) #downloads-button[progress="true"] {
+    #nav-bar:not(:focus-within):not(:hover) #downloads-button[progress="true"],
+    #nav-bar:not(:focus-within):not(:hover) #urlbar-searchmode-switcher[open] {
         opacity: 1 !important;
     }
 }
@@ -80,6 +83,48 @@ sidebery expand on inactive windows
                 transition: opacity 0.2s ease-in;
             }          
 }}}
+
+/* bookmarks detachable/float ------------------------------------------------------------------------------ */
+
+@media -moz-pref("ultima.navbar.bookmarks.float") {
+    @media not -moz-pref("ultima.navbar.bookmarks.fadeout") {
+        @media not -moz-pref("ultima.navbar.bookmarks.autohide") {
+            @media not -moz-pref("ultima.navbar.bookmarks.centered") {
+                :root {--uc-bookbar-height:0px !important;}
+                #main-window, #main-window:not([lwtheme]) {
+                    & #PersonalToolbar {
+                        background:var(--uc-ultima-window) !important;
+                        border-radius: calc(var(--uc-button-border) + 8px) !important;
+                        box-shadow: var(--uc-box-shadow) !important;
+                        padding:0 !important;
+                        position:fixed !important;
+                        top:54px !important;
+                        left:50vw !important; transform: translateX(-50%);
+                        width: 600px !important; height: 40px !important;
+                        @media -moz-pref("ultima.navbar.bookmarks.float.left") {
+                            left: 67px !important; transform: translateX(0) !important;
+                            right: unset !important;
+                            /* z index needs specified handling here */
+                        }
+                        @media -moz-pref("ultima.navbar.bookmarks.float.right") {
+                            left: unset !important; transform: translateX(0) !important;
+                            right: 17px !important;
+                        }
+                        @media -moz-pref("ultima.navbar.bookmarks.float.compact") {
+                            height:30px !important;
+                        }
+                        @media -moz-pref("ultima.navbar.bookmarks.float.smaller") {
+                            width:200px !important;
+                        }
+                    }
+                    /* situational adjustments: nav bar autohide, tabs on top layout */
+                    /* append a ::before to the navbar that tracks X location of the floating bookmark bar here */
+                }
+
+            }
+        }
+    }
+}
 
 /* sidebar extra theming (not sidebery) -------------------------------------------------------------------- */
 

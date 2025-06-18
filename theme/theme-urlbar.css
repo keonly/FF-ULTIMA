@@ -10,13 +10,16 @@ File Desc:         Alternative Styles for the URL Bar
 .search-one-offs button {
     cursor: pointer !important;
     &:hover{
-        transform:scale(1.1);
+        transform: scale(1.1);
     }
 }
 
 #identity-box,#tracking-protection-icon-container, #page-action-buttons {
-    margin-top:1px !important;
-    margin-bottom:-1px !important;
+    margin-top: 0px !important;
+    margin-bottom: -1px !important;
+    cursor: pointer !important;
+}
+#identity-icon-box * {
     cursor: pointer !important;
 }
 :root {
@@ -25,6 +28,7 @@ File Desc:         Alternative Styles for the URL Bar
 
 #urlbar[open] {
     box-shadow: var(--uc-box-shadow) !important;
+    --urlbarView-separator-color: transparent !important;
 }
 
 #urlbar[focused]:not([suppress-focus-border]) > #urlbar-background, #searchbar:focus-within {
@@ -35,9 +39,26 @@ File Desc:         Alternative Styles for the URL Bar
 
 /* 5/28/2025 - new urlbar searchmode switcher */
 #urlbar-searchmode-switcher {
-  &[open] {
-    background-color: var(--uc-button-selected) !important;
-  }
+    &[open] {
+        background-color: var(--uc-button-selected) !important;
+    }
+    &[focused] {
+        background-color: var(--uc-button-selected) !important;
+    }
+}
+
+/* 6/11/2025 - 140.0b7 - new search mode switcher */
+@media -moz-pref("browser.urlbar.searchModeSwitcher.featureGate") or -moz-pref("browser.urlbar.scotchBonnet.enableOverride") {
+    @media not -moz-pref("browser.urlbar.unifiedSearchButton.always") {
+        #urlbar-searchmode-switcher {
+            margin-top: 0px !important;
+            margin-bottom: -1px !important;
+            cursor: pointer !important;
+        }
+        #urlbar[open] #urlbar-searchmode-switcher {
+            background-color: transparent !important;
+        }
+    }
 }
 
 /* urlbar settings --------------------------------------------------- */
@@ -103,6 +124,35 @@ File Desc:         Alternative Styles for the URL Bar
         .urlbarView-favicon, .urlbarView-type-icon {
             margin-left:-27px !important;
             transition: margin-left 1.6s ease-in-out !important;
+        }
+    }
+}
+
+@media -moz-pref("ultima.urlbar.float") {
+    #urlbar {
+        transition: transform 0.3s ease-in-out !important;
+        &[open] {
+            --urlbarView-separator-color: transparent !important;
+            padding-top:3px !important;
+            & #urlbar-background {
+                box-shadow: var(--uc-box-shadow) !important;
+            }
+        }
+        &[breakout-extend] {
+            transform: translateY(20vh) scale(1.3);
+        }
+        /*situational*/
+        &:hover:not([open]) {
+            transition: transform 0.3s ease-in-out 5s !important;
+            transform: translateY(20vh) scale(1.3) !important;
+        }
+    }
+    /*situational*/
+    :root:has(#urlbar-searchmode-switcher[open]) {
+        & #urlbar  {
+            padding-bottom:0px !important;
+            transition: transform 0.3s ease-in-out 5s !important;
+            transform: translateY(20vh) scale(1.3) !important;
         }
     }
 }

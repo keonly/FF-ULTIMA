@@ -99,7 +99,7 @@ input, #prefs {
 
     
 body::after {
-    position: absolute;
+    position: fixed;
     display: none;
     z-index: 100;
     top: 0.8%;
@@ -142,32 +142,34 @@ body::after {
         }
     }
 }
-@media not -moz-pref("user.theme.adaptive") { @media not -moz-pref("user.theme.dark.a") { @media not -moz-pref("user.theme.dark.catppuccin") { @media not -moz-pref("user.theme.dark.catppuccin-frappe") { 
-@media not -moz-pref("user.theme.dark.catppuccin-mocha") { @media not -moz-pref("user.theme.dark.gruvbox") { @media not -moz-pref("user.theme.dark.midnight") {
-        body::after {
-            content: "\ No Color Scheme is selected for Dark Mode! \A \A  This can cause issues! \A ";
-            display: block;
-        }
-}}}}}}}
-
-@media not -moz-pref("user.theme.light.a") { @media not -moz-pref("user.theme.light.gruvbox") {
-        body::after {
-            content: "\ No Color Scheme is selected for Light Mode! \A \A  This can cause issues! \A ";
-            display: block;
-        }
-}}
-@media -moz-pref("ultima.xstyle.tabgroups.with.colormix.ii") {
-    @media -moz-pref("ultima.xstyle.tabgroups.with.colormix") {
-        body::after {
-            content: "\ Only use one tab group color mix! \A \A  they don't blend well together! \A ";
-            display: block;
-        }
-    }
-}
 @media -moz-pref("ultima.spacing.relaxed") {
     @media -moz-pref("ultima.spacing.compact") {
         body::after {
             content: "\ Only use one of these settings! \A \A  ultima.spacing.compact \A ultima.spacing.relaxed (NOTE: relaxed spacing is WIP design) \A ";
+            display: block;
+        }
+    }
+}
+@media -moz-pref("ultima.navbar.bookmarks.float.left") {
+    @media -moz-pref("ultima.navbar.bookmarks.float") {
+        body::after {
+            content: "\ FYI \A \A  ultima.navbar.bookmarks.float is a WIP \A and ultima.navbar.bookmarks.float.left is not worth using right now \A ";
+            display: block;
+        }
+    }
+}
+@media -moz-pref("ultima.navbar.bookmarks.float.autohide") {
+    @media -moz-pref("ultima.navbar.bookmarks.float") {
+        body::after {
+            content: "\ FYI \A \A  ultima.navbar.bookmarks.float is a WIP \A and ultima.navbar.bookmarks.float.autohide is not worth using right now \A ";
+            display: block;
+        }
+    }
+}
+@media -moz-pref("ultima.tabs.vertical.hide.private") {
+    @media not -moz-pref("ultima.tabs.vertical.hide") {
+        body::after {
+            content: "\ You need both of these settings! \A \A  ultima.tabs.vertical.hide \A ultima.tabs.vertical.hide.private \A ";
             display: block;
         }
     }

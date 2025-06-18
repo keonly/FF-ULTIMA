@@ -7,14 +7,13 @@
 FF Ultima:         https://github.com/soulhotel/FF-ULTIMA
 Wiki:              https://github.com/soulhotel/FF-ULTIMA/wiki/Settings
 Latest Version:    https://github.com/soulhotel/FF-ULTIMA/releases/latest                 
-License:           MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE
+License:           https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE MPL 2.0
 
 \////////////////////////////////////////////////////////////////////////////////////////*/
 
 /* color schemes */
 user_pref("user.theme.dark.a", true); /*default dark mode*/
 user_pref("user.theme.light.a", true); /*default light mode*/
-user_pref("user.theme.adaptive", false); /*Auto Tab Color Extension*/
 user_pref("user.theme.dark.catppuccin", false);
 user_pref("user.theme.dark.catppuccin-frappe", false);
 user_pref("user.theme.dark.catppuccin-mocha", false); /*by Draff*/
@@ -30,6 +29,12 @@ user_pref("ultima.navbar.hidebuttons", false);
 user_pref("ultima.navbar.bookmarks.centered", true);
 user_pref("ultima.navbar.bookmarks.autohide", false);
 user_pref("ultima.navbar.bookmarks.fading", false);
+user_pref("ultima.navbar.bookmarks.float", false);
+user_pref("ultima.navbar.bookmarks.float.autohide", false);
+user_pref("ultima.navbar.bookmarks.float.compact", false);
+user_pref("ultima.navbar.bookmarks.float.left", false);
+user_pref("ultima.navbar.bookmarks.float.right", false);
+user_pref("ultima.navbar.bookmarks.float.smaller", false);
 user_pref("ultima.navbar.windowcontrols.carl", false);
 user_pref("ultima.navbar.windowcontrols.trafficlights", false);
 user_pref("ultima.navbar.windowcontrols.whiteout", false);
@@ -44,6 +49,7 @@ user_pref("ultima.urlbar.suggestions", true);
 user_pref("ultima.urlbar.centered", false);
 user_pref("ultima.urlbar.hidebuttons", false);
 user_pref("ultima.urlbar.transparent", false);
+user_pref("ultima.urlbar.float", false);
 
 /* sidebar */
 user_pref("ultima.sidebar.autohide", false);
@@ -126,7 +132,7 @@ user_pref("ultima.enable.nightly.config", false);
 user_pref("ultima.enable.js.config", false);
 
 /* extra required */
-user_pref("extensions.activeThemeID", "default-theme@mozilla.org");Add commentMore actions
+user_pref("extensions.activeThemeID", "default-theme@mozilla.org");
 user_pref("browser.theme.content-theme", 0);
 user_pref("browser.theme.toolbar-theme", 0);
 user_pref("ultima.xstyle.highlight.aboutconfig", true);
