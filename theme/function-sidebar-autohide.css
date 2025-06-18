@@ -26,7 +26,7 @@ Adjustments for disabled vertical tab bar
         position: relative;
         min-width: 14em;
         max-width: var(--uc-sidebar-collapsed-width) !important;
-        transition: max-width 0.2s linear 0ms !important;
+        transition: max-width 0.1s linear 0ms !important;
     }
     #main-window:has(#sidebar-splitter:hover) #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover,
     #main-window:has(#sidebar-splitter:hover) #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {
@@ -48,7 +48,7 @@ Adjustments for disabled vertical tab bar
     }
 
     #sidebar-box {
-        transition: max-width 0.4s linear 0ms !important;
+        transition: max-width 0.1s linear 0ms !important;
         min-width: var(--uc-sidebar-collapsed-width) !important;
         will-change: max-width;
     }
