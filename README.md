@@ -37,7 +37,7 @@
 
 ## Installation
 
-###### 🚨 Do not skip the installation instructions! 🚨
+###### Do not skip the installation instructions! 🚨
 
 <details>
 <summary>Finding your Profile Folder (where the theme files go)</summary>
@@ -71,7 +71,7 @@
 <img src="https://github.com/user-attachments/assets/c65972cf-88bf-41da-87d1-5d5a780230ba" width="650" />
 </details>
 
-###### ⬇️ Choose *one* of the installation methods below. ⬇️
+###### Choose *one* of the installation methods below. ⬇️
 
 <details><summary>The Easy Way</summary>
 
@@ -87,7 +87,7 @@
 
 <details><summary>The Hard Way</summary>
 
-###### 🛈 For this method, all you need is Git and a Terminal. It's harder for the less technical of people 🛈
+###### 🛈 For this method, all you need is Git and a Terminal. It's harder for the less technical people 🛈
 
 - This automated tool requires no download. It runs by fetching [gituserChrome](https://github.com/soulhotel/git-userChrome)
 - Locates all profile folders and allows you to specify which one to install FF Ultima to
@@ -126,8 +126,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.gi
 </details>
 
 
-###### ✅ What to do *after* you Install FF Ultima ✅
-<details><summary>Post Installation</summary>
+###### What to do *after* installing FF Ultima.. ✅
+<details><summary>Post Installation (finding the settings & visiting the wiki)</summary>
 
 >
 - Go to `about:config` and search for `ultima` to see all of your settings. You should also see:
@@ -135,7 +135,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.gi
 ![image](https://github.com/user-attachments/assets/7c3c1fb9-8080-4823-9994-23e6af91498e)
 - Visit [the Wiki](https://github.com/soulhotel/FF-ULTIMA/wiki) to learn more about what is possible:
     - Frequently asked questions
-    - All theme settings (previews & explanations)
+    - All theme settings (full overview)
     - How to install, [uninstall](https://github.com/soulhotel/FF-ULTIMA/wiki/How-to-Uninstall-the-Theme), [update](https://github.com/soulhotel/FF-ULTIMA/wiki/How-to-Update-the-Theme)
     - Sidebery configuration (optional)
     - Videos, documentation, and a whole lot more..
@@ -145,6 +145,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command "iex (irm 'https://raw.gi
 
 *And a special Thank You, for sponsoring this project*
 
-<!-- sponsors --><a href="https://github.com/s0flY" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-align:center; margin: 0 10px;"> <img src="https://github.com/s0flY.png" width="80" alt="s0flY" /><br/> <span>@s0flY</span> </a><!-- sponsors -->
+<!-- sponsors --><a href="https://github.com/s0flY"><img src="https:&#x2F;&#x2F;github.com&#x2F;s0flY.png" width="60px" alt="User avatar: " /></a><a href="https://github.com/Rhodkee"><img src="https:&#x2F;&#x2F;github.com&#x2F;Rhodkee.png" width="60px" alt="User avatar: Rachel " /></a><!-- sponsors -->
 
 

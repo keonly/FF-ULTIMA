@@ -1,50 +1,77 @@
-### <ins> FF Ultima Version 2.7 Release
-- **[Click Me ⬇️ Release Download](https://github.com/soulhotel/FF-ULTIMA/releases/download/2.7/ffultima2.7.zip)**
+### <ins> FF Ultima Version 3.0 Release
+- **[Click Me ⬇️ Release Download](https://github.com/soulhotel/FF-ULTIMA/releases/download/3.0/ffultima3.0.zip)**
 - **[Click Me ⬇️ Source Download](https://github.com/soulhotel/FF-ULTIMA/archive/refs/heads/main.zip)**
 - 🗨️ [Submit an issue](https://github.com/soulhotel/FF-ULTIMA/issues/new/choose) or ask questions not answered in [the Wiki](https://github.com/soulhotel/FF-ULTIMA/wiki).
 - ⚙️ [Change settings](https://github.com/soulhotel/FF-ULTIMA/wiki/Settings), tab size, autohiding, spacing, and more.
-- ⚙️ How to [Update the Theme](https://github.com/soulhotel/FF-ULTIMA/wiki/How-to-Update-the-Theme) to a new version.
+- ⚙️ [How to Update](https://github.com/soulhotel/FF-ULTIMA/wiki/How-to-Update-the-Theme) the Theme to a new version.
   
 ### <ins> Version Notes
-- Another small but impactful update. With some *quality of life* changes, & version fixes.
-- Check out the Video at the bottom, it's pretty cool!
-- User.js (recommended) not required.
+- This is a big *quality of life* update focused on stability. With a full restructure of source files, and a less = more approach. Using less code but keeping the same look & functionality. Organizing code categorically to improve readability. Also some major improvements for Color Scheme handling.
 - Firefox 138+ required.
+- User.js required.
+<!--
+- User.js required. 
+- User.js not required.
+- User.js (recommended) not required. 
+-->
+
+<details><summary><ins>Before You Update (CLICK ME)</summary>
+
+>
+- Returning Users: **User.js is Required** for this update. To help avoid confusion if a setting is deleted or changed. The about:config page now notifies you when an old/deleted/renamed setting is detected.
+
+https://github.com/user-attachments/assets/e0dfb849-cf89-4818-b196-118757e85c4a
+
+<img src="https://github.com/user-attachments/assets/5dfaa05b-d838-4f5b-9883-148708ba714a" width="50%" />
+
+</details>
 
 ### <ins> Change Log:
-- `fyi • ℹ️ • ` "The Hard Way" installation method now automates every Step-4-Install for Linux, Mac, Windows de7e58e b15b828
-- `fix • 🔴 • ` Optimization for Fullscreen scenarios
-- `fix • 🔴 • ` Context menu's `panel shadow` changes are fixed dad3532
-- `new • 🟢 • ` Setting `ultima.tabs.tabgroups.4` to wrap all tabs for a group inside of a *dashed* style box 0fe9bc4
-- `new • 🟢 • ` Settings `ultima.navbar.bookmarks.float` new style and usability for bookmarks bar (see preview) 5d6aab1
-- `new • 🟢 • ` Setting `ultima.urlbar.float` url bar transitions into a floating center when in use 4cb9bb8
-- `qol • 🟡 • ` New Tab Page Context Menu's hover color correction, weather widget scale on hover removed
-- `qol • 🟡 • ` All Tab related settings are now organized within [`theme-tab-styles.css`](https://github.com/soulhotel/FF-ULTIMA/blob/main/theme/theme-tab-styles.css) instead of `theme-xstyle.css`
-- `qol • 🟡 • ` Container Tab Styles have been revamped: `ultima.tabs.tabContainers.1`,2,3. Functionality is now fully independant of Tab groups, and styles can be mixed/matched/seperated in a total of 8 to 128 style combinations (when considering tab groups or not) 18d3473
-- `qol • 🟡 • ` New Search Mode Switcher adjustments for theme e5827b4 08125a8
-- `qol • 🟡 • ` Setting `ultima.tabs.vertical.hide.private` can be used to enable hide behavior when in Private windows #309
-- `qol • 🟡 • ` Adaptive Tab Color integration has slight improvements. You no longer need to toggle `user.theme.adaptive`, just disable any current color scheme and you are good to go.
-- `qol • 🟡 • ` When no color scheme is selected, Firefox will default to default appearance with only some FF Ultima adjustments (spacing, shadows, etc)
-- `wip • ℹ️ • ` The current color scheme application logic is a bit bloated, It's about time I rework it to be more *simple*.
+- #308 #310 #311 #315 #317
+- `fyi • ℹ️ •` "The Hard Way" installation method fully [automates](https://github.com/soulhotel/FF-ULTIMA?tab=readme-ov-file#installation) install & updates for all Operating Systems
+- `fix • 🔴 •` Tabs shifting 1 pixel when expanding-on-hover is no more
+- `fix • 🔴 •` Reductions in modifying the sidebar splitters has fixed several positioning flaws
+- `new • 🟢 •` New Color Scheme [Kanagawa Wave](https://github.com/soulhotel/FF-ULTIMA/tree/main/theme/color-schemes/kanagawa-wave) by **@pitchaya-s**! #313
+- `new • 🟢 •` Introducing Transparency support for Mica/Blurred Windows for all OS's. See the [wiki](https://github.com/soulhotel/FF-ULTIMA/wiki/Transparent-Theming).
+- `qol • 🟡 •` Setting `ultima.spacing.compact` improvements (see below)
+- `qol • 🟡 •` Theme size reduced by 7mb
+- `qol • 🟡 •` Total number of File(s) reduced by 10
+- `qol • 🟡 •` There are now a total of 16 color schemes
+- `qol • 🟡 •` By default, the sidebars box-shadow is removed @calciferchang
+- `qol • 🟡 •` Youtube theming can be turned off with `user.theme.xtension.YT`
+- `qol • 🟡 •` Every color scheme now has a dark/light version per `user.theme`
+- `qol • 🟡 •` You can create a Color Scheme in 10 minutes. Learn how in the [wiki](https://github.com/soulhotel/FF-ULTIMA/wiki/Create-a-Color-Scheme).
+- `qol • 🟡 •` New Tab Page can automatically adjust colors based on color scheme
+- `qol • 🟡 •` Turning off all color schemes now adapts to using default firefox colors
+- `fyi • 🟡 •` Setting `user.theme.adaptive` deleted. [Adaptive Tab Color](https://github.com/soulhotel/FF-ULTIMA/wiki/Adaptive-Tab-Color-Configuration) now works without it
+- `qol • 🟡 •` Ublock Origin extension panel now automatically adjust to color scheme e1ddb8c
+- `qol • 🟡 •` Setting `ultima.xstyle.sidebar.theming` deleted. It is now handled automatically via color schemes
+- `qol • 🟡 •` Floating Url Bar optimization, max width & positioning adjustment for smaller windows to bigger (Ultrawide) windows d288238
+<!--
+`fyi • ℹ️ •` 
+`fix • 🔴 •` 
+`new • 🟢 •` 
+`qol • 🟡 •` 
+`wip • ℹ️ •` 
+-->
 
-> New Floating URL Bar Setting
+> FF Ultima *Kanagawa Wave* Edition by @pitchaya-s
 
-https://github.com/user-attachments/assets/f0c7744a-f527-4025-b300-191922babacb
+![image](https://github.com/user-attachments/assets/748ab6bb-b2c9-421e-abf7-4a05415eb198)
 
-> This is [userChrome Companion](https://github.com/soulhotel/userChrome-Companion). *Instead of* relying on the **about:config** page and **user.js**, I see a future where FF Ultima works alongside userChrome Companion. Maybe you see that future as well. Depending on the development of `UCC` and how **easier** it is for both you and me, it can become a possibility. Definitely want opinions on this.
+> Setting `user.theme.transparent`. See the [wiki](https://github.com/soulhotel/FF-ULTIMA/wiki/Transparent-Theming).
 
-https://github.com/user-attachments/assets/3aeadb12-dd2a-403b-a31f-0cb5784489ba
-###### Full 4k Video uncropped on [Youtube](https://www.youtube.com/watch?v=Mz7gmYP2_1A&list=PLTVs0Y4lTV56Kapji1pVjMsMqE6PAHwzl&index=1)
+![transparentt](https://github.com/user-attachments/assets/f78d6606-e194-4b48-a395-145874789575)
+![Screenshot_20250624_050538](https://github.com/user-attachments/assets/3be6c64b-338a-4c65-a183-3a0ac16896b5)
 
-## 💝 Support:
+> Setting `user.theme.compact` improvements
 
-> This `Support` section will dissappear after this release
+![Vid_20250622_214445](https://github.com/user-attachments/assets/0457c8ac-16c3-4e87-a4a3-03a845b5dd3a)
 
-So, 1 year ago, I rejected the idea of [Donations](#136). But now I'm at a point where I realize - Income plays a huge part in, the time you have *for the things you love*.
+> Preview of the new sidebar splitter handling & `Scarlet` Color Scheme
 
-I've gained a lot while maintaining Ultima, like knowledge and an avenue for creativity as a hobby. But I'm losing a lot too. I'm losing time to maintain it. I'm losing the time I could use towards getting started on other projects (Shout out to [userChrome Companion](https://github.com/soulhotel/userChrome-Companion)). I'm losing income in the real world & pretty sure we are all losing income in these current 2025 times.. For anyone that would like to further support the development of FF Ultima or support my efforts in creating/maintaining.. And <ins>ONLY</ins> if you are able to.. You can now:
+![Vid_20250624_235601-ezgif com-optimize](https://github.com/user-attachments/assets/b2edb724-efc2-4409-ac26-49fb3119c8aa)
 
-[![💖 Sponsor Me](https://img.shields.io/badge/💖%20Sponsor%20Me-f19ef7?style=for-the-badge&labelColor=f19ef7&color=f19ef7)](https://github.com/sponsors/soulhotel)
+> Mac OS Current State
 
-
-> FF Ultima is reaching it's maturity, additional updates to the theme will most likely only focus on bugs, patches, and fine-tuning. If you'd like to see more features added to the list, feel free to fork or push via pull request. Contributors, like always - are always welcome. Otherwise, enjoy.
+![Image](https://github.com/user-attachments/assets/0a84886f-c471-4ce9-9bf5-9ce31073625f)

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     # This is a cron schedule, it will run every day at 15:30. You can change this to whatever you want.x
-    - cron: 30 15 * * 0-6
+    - cron: 30 15 * * 0
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,10 +25,8 @@ jobs:
           file: 'README.md'
           
           # Template
-          template: '<a href="https://github.com/{{{ login }}}" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-align:center; margin: 0 10px;">
-          <img src="https://github.com/{{{ login }}}.png" width="80" alt="{{{ login }}}" /><br/>
-          <span>@{{{ login }}}</span>
-          </a>'
+          #template: |
+
       # Deploy the changes back to the main branch of the repository
       - name: Commit and Push to GitHub 🚀
         run: |
