@@ -59,7 +59,7 @@ user_pref("ultima.sidebar.hide.header", true);
 /* sidebery */
 user_pref("ultima.sidebery.autohide", true);
 user_pref("ultima.sidebery.expandon.inactive.windows", false);
-user_pref("user.theme.xtension.sidebery", true);
+user_pref("user.theme.xtension.sidebery", false);
 
 /* tabs related settings */
 user_pref("ultima.spacing.compact.tabs", true);
@@ -103,7 +103,7 @@ user_pref("ultima.xstyle.newtab.rounded", false); /*new tab page*/
 user_pref("ultima.xstyle.private", false); /*private browser home page*/
 
 /* extra theming */
-user_pref("ultima.theme.icons", true);
+user_pref("ultima.theme.icons", false);
 user_pref("user.theme.xtension.ublock", true);
 user_pref("user.theme.xtension.YT", false);
 user_pref("ultima.theme.menubar", true);
